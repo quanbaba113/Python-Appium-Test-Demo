@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+	<UiMap>
+		<application>
+			<DefaultPage>homePage</DefaultPage>
+				<AppName>ePrint</AppName>
+				<Version>1.0.0</Version>
+				<Environment>QA</Environment>
+				<TestCategory>IOS</TestCategory>
+				<NetWork>Wifi</NetWork>
+			<Description>The saved ePrint all page formation for IOS</Description>
+		</application>
+
+		<pages>
+		    <!-- welcome page -->
+			<page name="welcome" description = "welcome page" >
+                <element name="welcomeTitle"   type="xpath"      value="//*[@text='Welcome to HP ePrint']" />
+				<element name="HPePrint"       type="id"         value="com.hp.android.print:id/welcome_activity_tv_title" />
+				<element name="skipButton"     type="id"         value="com.hp.android.print:id/welcome_btn_skip_done" page="diagnosticsUsage" />
+				<element name="activated"      type="id"         value="com.hp.android.print:id/welcome_activate_btn_activate"  />
+			</page>
+
+            <page name="diagnosticsUsage" description="diagnostics usage">
+                <element name="diagnosticsUsageText"  type="id"  value="com.hp.android.print:id/diagnostics_and_usage_lbl_diagnostics_and_usage" />
+                <element name="done"                  type="id" value="com.hp.android.print:id/diagnostics_and_usage_activate_btn_done" />
+                <element name="gotIt"                 type="id" value="com.hp.android.print:id/btn_got_it" page="homePage" />
+
+            </page>
+
+            <page name="homePage" description = "The ePrint home page." >
+				<element name="HPePrint"      type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]" />
+				<element name="notifications" type="name"       value="history"  page="notificationsInfo" />
+				<element name="settings"      type="name"       value="settings" />
+				<element name="photosText"    type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAElement[1]"    page="photoPage" />
+				<element name="emailText"     type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[2]/UIAElement[1]" />
+				<element name="webText"       type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[3]/UIAElement[1]" />
+				<element name="cloudText"     type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[4]/UIAElement[1]" />
+			</page>
+
+			<page name="photoPage" description="Photos page">
+				<element name="blogs"        type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]" />
+				<element name="firstImage"   type="xpath"      value="//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[2]/UIAImage[1]" page="previewPage" />
+			</page>
+
+			<page name="previewPage" description="preview page">
+				<element name="previewText"    type="xpath"  value="//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]" />
+                <element name="print"          type="xpath"  value="//UIAApplication[1]/UIAWindow[1]/UIAButton[1]" page="printers" />
+                <element name="printBtn"       type="xpath"  value="//UIAApplication[1]/UIAWindow[1]/UIAButton[2]" />
+			    <element name="printing"       type="xpath"  value="//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]" />
+            </page>
+
+            <page name="printers" description="all prints">
+                <element name="addPirnt"       type="xpath" value="//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAButton[3]" page="addPrinter" />
+            	<element name="back"           type="xpath" value="//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAButton[2]"  page="previewPage" />
+
+			</page>
+
+            <page name="addPrinter" description="add print">
+                <element name="printertxtsearch" type="name"    value="printer address" />
+                <element name="done"             type="xpath"   value="//UIAApplication[1]/UIAWindow[4]/UIAKeyboard[1]/UIAButton[4]" page="printers" />
+            </page>
+
+            <page name="notificationsInfo">
+                <element name="back"                 type="name"      value="Back" />
+                <element name="photoName"            type="xpath"     value="//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAStaticText[1]" />
+                <element name="printIp"              type="xpath"     value="//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAStaticText[2]" />
+                <element name="time"                 type="xpath"     value="//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAStaticText[3]" />
+                <element name="printStatus"          type="xpath"     value="//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableGroup[1]/UIAStaticText[1]" />
+				<element name="removeNotifications"  type="name"      value="remove notification" />
+				<element name="remove"               type="name"      value="Remove" />
+            </page>
+		</pages>
+	</UiMap>
+</test-data>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+	<UiMap>
+		<application>
+			<DefaultPage>welcome</DefaultPage>
+				<AppName>ePrint</AppName>
+				<Version>1.0.0</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Android</TestCategory>
+				<NetWork>Wifi</NetWork>
+			<Description>The saved ePrint all page formation for android</Description>
+		</application>
+		
+		<pages>
+		    <!-- welcome page -->
+			<page name="welcome" description = "welcome page" >
+                <element name="welcomeTitle"   type="xpath"      value="//*[@text='Welcome to HP ePrint']" />
+				<element name="HPePrint"       type="id"         value="com.hp.android.print:id/welcome_activity_tv_title" />
+				<element name="skipButton"     type="id"         value="com.hp.android.print:id/welcome_btn_skip_done" page="diagnosticsUsage" />
+				<element name="activated"      type="id"         value="com.hp.android.print:id/welcome_activate_btn_activate"  page="register" />
+			</page>
+
+			<page name="register" description="register page">
+				<element name="activateText"   type="id"   value="com.hp.android.print:id/txt_app_title"/>
+				<element name="activateButton" type="id"   value="com.hp.android.print:id/txt_btn_activate" />
+				<element name="email"           type="id"   value="com.hp.android.print:id/auto_complete_txt_email"/>
+				<element name="alertTitle"     type="id"   value="android:id/alertTitle"/>
+				<element name="message"        type="id"    value="android:id/message" />
+				<element name="codeText"       type="id"   value="com.hp.android.print:id/pinRegistrationCodeText" />
+			</page>
+
+			<page name="registerSuccess" description="register success page">
+				<element name="done"         type="id"  value="com.hp.android.print:id/txt_btn_done" />
+				<element name="usage"        type="id" value="com.hp.android.print:id/diagnostics_and_usage_lbl_diagnostics_and_usage"/>
+				<element name="usageDonw"   type="id"  value="com.hp.android.print:id/diagnostics_and_usage_activate_btn_done" page="diagnosticsUsage" />
+
+			</page>
+
+            <page name="diagnosticsUsage" description="diagnostics usage">
+                <element name="diagnosticsUsageText"  type="id"  value="com.hp.android.print:id/diagnostics_and_usage_lbl_diagnostics_and_usage" />
+                <element name="done"                  type="id" value="com.hp.android.print:id/diagnostics_and_usage_activate_btn_done" />
+                <element name="gotIt"                 type="id" value="com.hp.android.print:id/btn_got_it" page="homePage" />
+
+            </page>
+
+            <page name="homePage" description = "The ePrint home page." >
+				<element name="HPePrint"      type="id"      value="com.hp.android.print:id/txt_app_title" />
+				<element name="notifications" type="id"      value="com.hp.android.print:id/button_notifications"  page="notificationsInfo" />
+				<element name="settings"      type="id"      value="com.hp.android.print:id/button_settings" />
+                <element name="photosImg"     type="id"      value="com.hp.android.print:id/button_images" />
+				<element name="filesImg"      type="id"      value="com.hp.android.print:id/button_file" page="filesPage" />
+				<element name="webImg"        type="id"      value="com.hp.android.print:id/button_web" />
+				<element name="emailImg"      type="id"      value="com.hp.android.print:id/button_email" />
+				<element name="photosText"    type="id"      value="com.hp.android.print:id/txt_images" />
+				<element name="filesText"     type="id"      value="com.hp.android.print:id/txt_file" />
+				<element name="webText"       type="id"      value="com.hp.android.print:id/txt_web" />
+				<element name="emailText"     type="id"      value="com.hp.android.print:id/txt_email" />
+			</page>
+
+			<page name="filesPage" description="files page">
+				<element name="searchFile"       type="id"       value="com.hp.android.print:id/fragment_file_browser_et_search" />
+				<element name="deviceStorage"    type="id"       value="com.hp.android.print:id/home_screen_lbl_storage" />
+				<element name="myFile"           type="id"       value="com.hp.android.print:id/list_item_file_icon_lbl_title" />
+				<element name="ByFiletype"       type="id"       value="com.hp.android.print:id/home_screen_lbl_filetype" />
+				<element name="pdfs"             type="xpath"    value="//*[@text='PDFs']" page="PDFDetailsPage" />
+				<element name="docs"             type="xpath"    value="//*[@text='DOCs']" />
+				<element name="ppts"             type="xpath"    value="//*[@text='PPTs']" />
+				<element name="xlss"             type="xpath"    value="//*[@text='XLSs']" />
+				<element name="others"           type="xpath"    value="//*[@text='Others']" />
+				<element name="loadingFiles"     type="id"       value="com.hp.android.print:id/list_item_file_icon_lbl_summary" />
+			</page>
+
+			<page name="PDFDetailsPage" description="PDFs page">
+				<element name="back"         type="id"    value="com.hp.android.print:id/ic_arrow" />
+				<element name="pdfText"      type="id"    value="com.hp.android.print:id/txt_files_title" />
+				<element name="firstPdfImg"  type="xpath" value="(//*[@resource-id='com.hp.android.print:id/list_item_file_icon_img_thumb'])[1]" />
+				<element name="firstPdfName" type="xpath" value="(//*[@resource-id='com.hp.android.print:id/list_item_file_icon_lbl_title'])[1]" page="previewPage"  />
+			    <element name="allPDFName"   type="id" value="com.hp.android.print:id/list_item_file_icon_lbl_title" page="previewPage"  />
+            </page>
+
+			<page name="previewPage" description="preview page">
+				<element name="previewText"    type="id" value="com.hp.android.print:id/txt_app_title" />
+				<element name="previewPhoto"   type="id" value="com.hp.android.print:id/preview_photo" />
+                <element name="print"          type="id" value="com.hp.android.print:id/printer_view_ctn_printer" page="printers" />
+                <element name="printBtn"       type="id" value="com.hp.android.print:id/preview_btn_print" />
+			    <element name="printing"       type="id" value="com.hp.android.print:id/job_print_lbl_status" />
+                <element name="closePrint"     type="id" value="com.hp.android.print:id/job_print_btn_cancel" />
+                <element name="hide"           type="id" value="com.hp.android.print:id/job_print_btn_done" />
+            </page>
+
+            <page name="printers" description="all prints">
+                <element name="addPirnt"       type="id" value="com.hp.android.print:id/actionBarPrinterAddButton" page="addPrinter" />
+            </page>
+
+            <page name="addPrinter" description="add print">
+                <element name="printertxtsearch" type="id"    value="com.hp.android.print:id/add_printer_txt_search" />
+                <element name="addButton"        type="id"    value="com.hp.android.print:id/add_printer_lbl_action_bar_add" />
+           		<element name="Adding"           type="id"    value="android:id/alertTitle" />
+				<element name="pleaseWait"       type="xpath" value="//*[@text='Please wait']" />
+				<element name="progress"         type="id"    value="android:id/progress" />
+                <element name="alreadyPrinter"   type="id"    value="android:id/message" />
+                <element name="useButton"        type="id"    value="android:id/button1" page="previewPage" />
+            </page>
+
+            <page name="notificationsInfo">
+                <element name="back"                 type="id"     value="com.hp.android.print:id/ic_arrow_backward_jobdetails" />
+                <element name="pdfName"              type="id"     value="com.hp.android.print:id/job_details_lbl_action_bar_title" />
+                <element name="message"              type="xpath"  value="//*[@text='Message']" />
+                <element name="printedMsg"           type="id"     value="com.hp.android.print:id/job_details_cloud_local_lbl_general_message" />
+                <element name="where"                type="xpath"  value="//*[@text='Where']" />
+                <element name="printName"            type="id"     value="com.hp.android.print:id/job_details_cloud_local_lbl_where_name" />
+                <element name="printIp"              type="id"     value="com.hp.android.print:id/job_details_cloud_local_lbl_where_model" />
+                <element name="removeNotiflcation"   type="id"     value="com.hp.android.print:id/job_details_btn_remove" />
+                <element name="notiflcations"        type="id"     value="com.hp.android.print:id/txt_app_title" />
+                <element name="done"                 type="id"     value="com.hp.android.print:id/job_history_done_button"  page="homePage" />
+                <element name="printFileName"        type="id"     value="com.hp.android.print:id/job_history_entry_lbl_file" />
+                <element name="printStatus"          type="id"     value="com.hp.android.print:id/job_history_entry_lbl_printer" />
+                <element name="time"                 type="id"     value="com.hp.android.print:id/job_history_entry_lbl_when" />
+            </page>
+		</pages>
+	</UiMap>
+</test-data>

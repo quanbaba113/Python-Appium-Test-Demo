@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+	<UiMap>
+		<application>
+			<DefaultPage>login</DefaultPage>
+				<AppName>outlook</AppName>
+				<Version>1.0.0</Version>
+				<Environment>Production</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>The saved outLook all page formation for android</Description>
+		</application>
+		
+		<pages>
+		    <!-- welcome page -->
+			<page name="login" description = "login page" >
+                <element name="logo"        type="xpath"      value="//*[@id='CredentialsInputPane']//img" />
+				<element name="email"       type="xpath"      value="(//*[@class='placeholderContainer'])[1]/input" />
+				<element name="password"    type="xpath"      value="(//*[@class='placeholderContainer'])[2]/input"/>
+				<element name="loginButton" type="id"         value="idSIButton9"                   page="inbox" />
+			</page>
+
+            <page name="inbox" description = "inbox page" >
+				<element name="outlookMail"  type="xpath"      value="//*[@role='banner']" />
+                <element name="newEmail"     type="xpath"      value="((//*[@class='conductorContent'])[3]//div[contains(@class,'scrollContainer')]//div[@autoid])[2]" />
+				<element name="time"          type="xpath"      value="(((//*[@class='conductorContent'])[3]//div[contains(@class,'scrollContainer')]//div[@autoid])[2]//div[contains(@class,'themePrimary')])[2]/span" />
+				<element name="title"        type="xpath"      value="//*[@class='rpHighlightAllClass rpHighlightSubjectClass']" />
+				<element name="code"         type="xpath"      value="(//*[@id='Item.MessagePartBody']//p)[4]" />
+			</page>
+		</pages>
+	</UiMap>
+</test-data>

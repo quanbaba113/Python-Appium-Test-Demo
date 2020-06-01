@@ -1,0 +1,4 @@
+accounts.firefox.com:HSTS	0	16787	1465972826779,1,1
+services.addons.mozilla.org:HSTS	0	16787	1481956895590,1,0
+addons.cdn.mozilla.net:HSTS	0	16787	1481956829024,1,0
+addons.mozilla.org:HSTS	0	16787	1481956869139,1,0

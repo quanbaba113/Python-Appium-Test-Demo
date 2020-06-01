@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+	<UiMap>
+		<application>
+			<DefaultPage>welcome1</DefaultPage>
+				<AppName>ePrint</AppName>
+				<Version>1.0.0</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Android</TestCategory>
+				<NetWork>Wifi</NetWork>
+				<Description>The saved ePrint all page formation for android</Description>
+		</application>
+		
+		<pages>
+		    <!-- welcome page -->
+			<page name="welcome1" description = "welcome page" >
+                <element name="welcomeTitle"   type="xpath"      value="//*[@text='欢迎使用 HP ePrint']" />
+				<element name="HPePrint"       type="id"         value="com.hp.android.print:id/welcome_activity_tv_title" />
+				<element name="skipButton"     type="id"         value="com.hp.android.print:id/welcome_btn_skip_done" page="activatePage" />
+				<element name="activated"      type="id"         value="com.hp.android.print:id/welcome_activate_btn_activate"  />
+				<element name="search" type="id" value="sb_form_q" />
+			</page>
+
+            <page name="activatePage" description = "激活页面" >
+                <element name="实习猫图标" type="id"      value="com.beyondsoft.interncat:id/iv" />
+				<element name="手机号码"    type="id"      value="com.beyondsoft.interncat:id/et_phone" />
+				<element name="密码"      type="id"      value="com.beyondsoft.interncat:id/et_pwd" />
+				<element name="登录"      type="id"      value="com.beyondsoft.interncat:id/tv_login"  view="机会页面:机会"/>
+			</page>
+
+		</pages>
+	</UiMap>
+</test-data>
